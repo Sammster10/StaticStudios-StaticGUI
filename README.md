@@ -89,6 +89,7 @@ To make a player open one of the above menus, do the following:
     </dependencies>
 ```
 6. Replace `[VERSION]` with the version specified at the top of this document
+7. In your main class's onEnable method, add the following line to enable the API: `StaticGUI.enable(this);`
 
 # Support Discord:
 https://discord.gg/9S6K9E5
