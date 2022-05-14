@@ -62,3 +62,7 @@ To make a player open one of the above menus, do the following:
   ExampleStaticGUI.open(player);
   ExampleGUICreator.openMainMenu(player);
 ```
+
+
+# Support Discord:
+https://discord.gg/9S6K9E5
