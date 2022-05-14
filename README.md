@@ -76,11 +76,13 @@ To make a player open one of the above menus, do the following:
 4. Run the following command: `mvn install`
 5. The project has now been installed in your local maven repository, you can now add the following to your `pom.xml` to use this as a dependency:
 ```xml
+    <dependencies>
         <dependency>
             <groupId>net.staticstudios</groupId>
             <artifactId>static-gui</artifactId>
             <version>[VERSION]</version>
         </dependency>
+    </dependencies>
 ```
 6. Replace `[VERSION]` with the version specified at the top of this document
 
