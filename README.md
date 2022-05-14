@@ -13,17 +13,17 @@ public class ExampleStaticGUI extends StaticGUI {
 
     private ExampleStaticGUI() {
         super(9, "Example GUI!");
-        getInventory().setItem(0, createButton(Material.DIAMOND, "I am a normal button",
-                List.of("lore line 1!", "lore line 2!!"), (p, t) -> {
-            p.sendMessage("You clicked this button with the click type: " + t.name());
+        setItem(0, createButton(Material.DIAMOND, "I am a normal button",
+                List.of("lore line 1!", "lore line 2!!"), (_player, clickType) -> {
+            _player.sendMessage("You clicked this button with the click type: " + clickType.name());
         }));
-        getInventory().setItem(1, ench(createButton(Material.DIAMOND, "I am a normal button but I am enchanted!",
-                List.of("lore line 1!", "lore line 2!!"), (p, t) -> {
-                    p.sendMessage("You clicked this button with the click type: " + t.name());
+        setItem(1, ench(createButton(Material.DIAMOND, "I am a normal button but I am enchanted!",
+                List.of("lore line 1!", "lore line 2!!"), (_player, clickType) -> {
+                    _player.sendMessage("You clicked this button with the click type: " + clickType.name());
                 })));
         for (int i = 2; i < 9; i++) addItem(createGrayPlaceHolder("I am a placeholder"));
-        setOnCloseRun((p, t) -> {
-            p.sendMessage("You closed a menu, the click type, 't' in this case, will always be null when an on close event is run");
+        setOnCloseRun((_player, clickType) -> {
+            _player.sendMessage("You closed a menu, the click type, 'clickType' in this case, will always be null when an on close event is run");
         });
     }
 }
@@ -41,15 +41,15 @@ public class ExampleGUICreator extends GUIUtils {
         //forever. It is set to false by default. Whenever a menu is closed, it is destroyed (taken out of memory) by default.
         //If you want it to not be destroyed, maybe consider using StaticGUI (applicable in most cases)
         c.setItems(
-                c.createButton(Material.EMERALD, "Your IGN is: " + player.getName(), List.of("I am lore!"), (p, t) -> {
-                    p.sendMessage("You clicked a button!");
+                c.createButton(Material.EMERALD, "Your IGN is: " + player.getName(), List.of("I am lore!"), (_player, clickType) -> {
+                    _player.sendMessage("You clicked a button!");
                 }),
-                ench(c.createButton(Material.EMERALD, "Your IGN is: " + player.getName(), List.of("I am an enchanted button!"), (p, t) -> {
-                    p.sendMessage("You clicked a button!");
+                ench(c.createButton(Material.EMERALD, "Your IGN is: " + player.getName(), List.of("I am an enchanted button!"), (_player, clickType) -> {
+                    _player.sendMessage("You clicked a button!");
                 }))
         );
-        c.setOnCloseRun((p, t) -> {
-            p.sendMessage("You closed the example menu, have fun making your own!");
+        c.setOnCloseRun((_player, clickType) -> {
+            _player.sendMessage("You closed the example menu, have fun making your own!");
         });
         c.open(player);
     }
