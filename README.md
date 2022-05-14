@@ -1,3 +1,5 @@
+# Currrent Version: 1.0.0
+
 # StaticStudios-StaticGUI
 A simple Minecraft GUI API for developers to use.
 
@@ -63,6 +65,20 @@ To make a player open one of the above menus, do the following:
   ExampleGUICreator.openMainMenu(player);
 ```
 
+# How to integrate in your project:
+1. Make sure that maven is installed
+2. Clone this repository
+3. Open a command prompt/terminal and cd to this projects home directory (the directory which has the src folder, the .gitignore, ect...)
+4. Run the following command: `mvn install`
+5. The project has now been installed in your local maven repository, you can now add the following to your `pom.xml` to use this as a dependency:
+```xml
+        <dependency>
+            <groupId>net.staticstudios</groupId>
+            <artifactId>static-gui</artifactId>
+            <version>[VERSION]</version>
+        </dependency>
+```
+6. Replase `[VERSION]` with the version specified at the top of this document
 
 # Support Discord:
 https://discord.gg/9S6K9E5
