@@ -1,4 +1,7 @@
 # Current Version: 1.0.0
+Requirements:
+    - You must be using PaperMC or a fork of it (This will not work with just Spigot/Bukkit!)
+    - Curently this API only supports servers running 1.18.1+ (This version limit should be lowered in the near future)
 
 # StaticStudios-StaticGUI
 A simple and lightweight Minecraft GUI API for developers to use.
