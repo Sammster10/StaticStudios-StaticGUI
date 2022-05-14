@@ -21,7 +21,7 @@ public class ExampleStaticGUI extends StaticGUI {
                 List.of("lore line 1!", "lore line 2!!"), (p, t) -> {
                     p.sendMessage("You clicked this button with the click type: " + t.name());
                 })));
-        for (int i = 2; i < 9; i++) getInventory().addItem(createGrayPlaceHolder("I am a placeholder"));
+        for (int i = 2; i < 9; i++) addItem(createGrayPlaceHolder("I am a placeholder"));
         setOnCloseRun((p, t) -> {
             p.sendMessage("You closed a menu, the click type, 't' in this case, will always be null when an on close event is run");
         });
