@@ -1,12 +1,16 @@
-# Currrent Version: 1.0.0
+# Current Version: 1.0.0
 
 # StaticStudios-StaticGUI
-A simple Minecraft GUI API for developers to use.
+A simple and lightweight Minecraft GUI API for developers to use.
+
+Not a developer but a server owner? Don't worry, there is a configurable plugin that makes use of this API and allows you to easily create GUIs using only `yml` files, you don't have to understand code to use it!
+
+Check it out: https://github.com/Sammster10/StaticStudios-GUIPlugin
 
 # Here are some examples of how to use this API:
 
 <b>Example 1, using the StaticGUI class:</b><br><br>
-Everything is defined in the constructor and there is only ever on instance of this menu.
+Everything is defined in the constructor and there is only ever one instance of this menu.
 You should only use the StaticGUI class if there will only ever be one instance of the GUI.
 ```java
 public class ExampleStaticGUI extends StaticGUI {
@@ -65,10 +69,10 @@ To make a player open one of the above menus, do the following:
   ExampleGUICreator.openMainMenu(player);
 ```
 
-# How to integrate in your project:
+# How to integrate this into your project(s):
 1. Make sure that maven is installed
 2. Clone this repository
-3. Open a command prompt/terminal and cd to this projects home directory (the directory which has the src folder, the .gitignore, ect...)
+3. Open a command prompt/terminal and cd to this project's home directory (the directory which has the src folder, the .gitignore, ect...)
 4. Run the following command: `mvn install`
 5. The project has now been installed in your local maven repository, you can now add the following to your `pom.xml` to use this as a dependency:
 ```xml
@@ -78,7 +82,7 @@ To make a player open one of the above menus, do the following:
             <version>[VERSION]</version>
         </dependency>
 ```
-6. Replase `[VERSION]` with the version specified at the top of this document
+6. Replace `[VERSION]` with the version specified at the top of this document
 
 # Support Discord:
 https://discord.gg/9S6K9E5
