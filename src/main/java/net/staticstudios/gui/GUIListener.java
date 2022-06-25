@@ -4,9 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
-import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.*;
 
 public class GUIListener implements Listener {
 
@@ -16,6 +14,10 @@ public class GUIListener implements Listener {
         if (!(e.getClickedInventory().getHolder() instanceof StaticGUI)) return;
         e.setCancelled(true);
         new GUIItem(e.getCurrentItem()).getRunnable().run((Player) e.getWhoClicked(), e.getClick());
+    }
+    @EventHandler
+    void onDrag(InventoryDragEvent e) { //Prevent players from being able to lose items that they attempt to put into the GUI's inventory
+        if (e.getInventory().getHolder() instanceof StaticGUI) e.setCancelled(true);
     }
 
     @EventHandler
